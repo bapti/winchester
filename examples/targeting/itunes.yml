@@ -1,0 +1,9 @@
+itunes:
+  those_dancing_days:
+    url: https://itunes.apple.com/search?term=those+dancing+days&country=gb&media=music&entity=album
+    pipelining: 5
+  arab_strap:
+    url: https://itunes.apple.com/search?term=arab+strap&country=gb&media=music&entity=album
+    connections: 20
+    pipelining: 10
+    duration: 30

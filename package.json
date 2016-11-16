@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint src",
-    "test": "nyc mocha --recursive -R spec ",
+    "test": "nyc mocha --recursive -R spec src",
     "posttest": "nyc report"
   },
   "repository": {
@@ -20,12 +20,12 @@
   "homepage": "https://github.com/darArch/winchester#readme",
   "dependencies": {
     "autocannon": "^0.15.0",
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "js-yaml": "^3.7.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.10.0",
-    "eslint-config-google": "^0.7.0",
     "mocha": "^3.1.2",
     "nyc": "^8.4.0",
     "simple-mock": "^0.7.2"
@@ -38,8 +38,17 @@
     "branches": 99,
     "cache": true,
     "all": true,
-    "include": [ "src/*.js", "src/**/*.js" ],
-    "exclude": [ "test/*.js", "test/**/*.js" ],
-    "reporter": [ "lcov", "text-summary" ]
+    "include": [
+      "src/*.js",
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "test/*.js",
+      "test/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
   }
 }
