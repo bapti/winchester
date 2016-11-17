@@ -5,7 +5,7 @@ const yaml = require('js-yaml')
 const defaultConfig = require('./defaultConfig')
 
 function steadyAim(target, targetName) {
-  target = Object.assign({}, defaultConfig, target)
+  target = Object.assign({}, defaultConfig, target, { title: targetName })
 
   if(target.url === undefined) {
     throw new Error(`No URL specified for ${targetName}`)
@@ -33,12 +33,27 @@ function fillSights(config) {
   return config
 }
 
+function lineUpTargets(config) {
+  const configKey = Object.keys(config)[0]
+
+  const targets = config[configKey]
+  const targetKeys = Object.keys(targets)
+
+  const targetList = []
+  for(var i = 0; i < targetKeys.length; i++) {
+    targetList.push(targets[targetKeys[i]])
+  }
+
+  return targetList
+}
+
 function alignSights(configPath) {
   const absolutePath = path.join(__dirname, configPath)
   const configString = fs.readFileSync(absolutePath).toString()
   const config = yaml.load(configString)
+  const filledConfig = fillSights(config)
 
-  return fillSights(config)
+  return lineUpTargets(filledConfig)
 }
 
 const targetingComputer = {

@@ -6,7 +6,8 @@ const defaultConfig = {
   method: 'GET',
   headers: [],
   body: undefined,
-  body_file: undefined
+  body_file: undefined,
+  title: undefined
 }
 
 module.exports = defaultConfig
