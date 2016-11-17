@@ -1,0 +1,7 @@
+test_targeting_config:
+  missing_body_file_target:
+    url: http://localhost:3001
+    body_file: /Users/donald/JavaScript/winchester/examples/body/not-there.txt
+  second_missing_body_file_target:
+    url: http://localhost:3002
+    body_file: /Users/donald/JavaScript/winchester/examples/body/not-there-either.txt

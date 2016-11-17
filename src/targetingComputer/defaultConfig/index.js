@@ -1,5 +1,5 @@
 const defaultConfig = {
-  url: 'http://localhost:3000',
+  url: undefined,
   connections: 10,
   pipelining: 1,
   duration: 10,
