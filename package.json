@@ -4,9 +4,9 @@
   "description": "Soak Testing Tool",
   "main": "index.js",
   "scripts": {
-    "pretest": "eslint src",
+    "pretest": "eslint src && node test/server/setUp &",
     "test": "nyc mocha --recursive -R spec 'winchester/*.spec.js' 'winchester/**/*.spec.js'",
-    "posttest": "nyc report"
+    "posttest": "nyc report && node test/server/tearDown"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,9 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "eslint": "^3.10.0",
+    "express": "^4.14.0",
     "mocha": "^3.1.2",
     "mockery": "^2.0.0",
     "nyc": "^8.4.0",

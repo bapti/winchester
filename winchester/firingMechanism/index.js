@@ -1,20 +1,32 @@
 const autocannon = require('autocannon')
 
-function fire(targets) {
-  const resultSet = []
+function singleShot(target) {
+  return new Promise((resolve, reject) => {
+    const instance = autocannon(target)
 
-  for(var i = 0; i < targets.length; i++) {
-    autocannon(targets[i], (err, results) => {
-      if(err) console.error(err)
-      resultSet.push(results)
+    instance.on('done', (results) => {
+      resolve(results)
     })
-  }
 
-  return resultSet
+    instance.on('reqError', (err) => {
+      console.error(err)
+      reject(null)
+    })
+
+    instance.on('error', (err) => {
+      console.error(err)
+      reject(null)
+    })
+  })
+}
+
+function semiAutomatic(targets) {
+  return targets.map(target => singleShot(target))
 }
 
 const firingMechanism = {
-  fire: fire
+  semiAutomatic: semiAutomatic,
+  singleShot: singleShot
 }
 
 module.exports = firingMechanism

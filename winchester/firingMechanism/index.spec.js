@@ -1,14 +1,17 @@
 const chai = require('chai')
+const chaiAsPromised = require('chai-as-promised')
 const mockery = require('mockery')
 const sinon = require('sinon')
 const sinonChai = require('sinon-chai')
+const EventEmitter = require('events')
 
+chai.use(chaiAsPromised)
 chai.use(sinonChai)
 const should = chai.should
 
 describe('firingMechanism', () => {
-  describe('fire', () => {
-    describe('happy path', () => {
+  describe('semiAutomatic', () => {
+    describe('happy path: test autocannon called correctly', () => {
       var sut
       var targets
       var firstTarget, secondTarget, thirdTarget
@@ -61,31 +64,31 @@ describe('firingMechanism', () => {
       })
 
       beforeEach(() => {
-        autocannon = sinon.spy()
+        autocannon = sinon.spy(() => new EventEmitter())
         mockery.registerMock('autocannon', autocannon)
 
         sut = require('.')
-        sut.fire(targets)
+        sut.semiAutomatic(targets)
       })
 
       it('should call autocannon', () => {
-        return autocannon.called.should.be.equal(true)
+        autocannon.called.should.be.equal(true)
       })
 
       it('should call autocannon once for each target in targets array', () => {
-        return autocannon.callCount.should.be.equal(3)
+        autocannon.callCount.should.be.equal(3)
       })
 
       it('should call autocannon with first target', () => {
-        return autocannon.calledWith(firstTarget).should.be.equal(true)
+        autocannon.calledWith(firstTarget).should.be.equal(true)
       })
 
       it('should call autocannon with second target', () => {
-        return autocannon.calledWith(secondTarget).should.be.equal(true)
+        autocannon.calledWith(secondTarget).should.be.equal(true)
       })
 
       it('should call autocannon with third target', () => {
-        return autocannon.calledWith(thirdTarget).should.be.equal(true)
+        autocannon.calledWith(thirdTarget).should.be.equal(true)
       })
 
       afterEach(() => {
@@ -95,6 +98,40 @@ describe('firingMechanism', () => {
 
       after(() => {
         mockery.disable()
+      })
+    })
+
+    describe('happy path: test results returned correctly', () => {
+      var sut
+      var targets
+      var results
+
+      before(() => {
+        sut = require('.')
+
+        targets = [
+          {
+            url: 'http://localhost:3000',
+            connections: 10,
+            pipelining: 1,
+            duration: 10,
+            method: 'GET',
+            headers: [],
+            body: undefined,
+            body_file: undefined,
+            title: 'default_target'
+          }
+        ]
+
+        results = sut.semiAutomatic(targets)
+      })
+
+      it('should return an array', () => {
+        return results.should.be.an('array')
+      })
+
+      it('should return an array with one result promise for each target', () => {
+        return results.length.should.be.equal(1)
       })
     })
   })
