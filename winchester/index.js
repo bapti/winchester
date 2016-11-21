@@ -3,10 +3,7 @@ const firingMechanism = require('./firingMechanism')
 
 function readyAimFire(configPath) {
   const targets = targetingComputer.alignSights(configPath)
-  const resultPromises = firingMechanism.fire(targets)
-  const results = resultPromises.map((rp) => rp.then(res => res, err => null))
-
-  console.log(results)
+  return firingMechanism.semiAutomatic(targets)
 }
 
 const winchester = {

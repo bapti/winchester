@@ -47,6 +47,7 @@
       "winchester/**/*.js"
     ],
     "exclude": [
+      "winchester/index.js",
       "winchester/*.spec.js",
       "winchester/**/*.spec.js"
     ],

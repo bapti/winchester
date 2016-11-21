@@ -9,8 +9,15 @@ program
   .command('fire [targetingInfo]')
   .description('Fire Winchester with the specified targeting information')
   .action((targetingInfo) => {
-    console.error(targetingInfo)
-    winchester.readyAimFire(targetingInfo)
+    const results = winchester.readyAimFire(targetingInfo)
+
+    Promise
+    .all(resultPromises)
+    .then((results) => {
+      console.log(results)
+    }, (error) => {
+      console.error(error)
+    })
   })
 
 program
