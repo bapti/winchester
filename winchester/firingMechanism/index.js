@@ -8,14 +8,8 @@ function singleShot(target) {
       resolve(results)
     })
 
-    instance.on('reqError', (err) => {
-      console.error(err)
-      reject(null)
-    })
-
-    instance.on('error', (err) => {
-      console.error(err)
-      reject(null)
+    instance.on('reqError', () => {
+      reject(Error('Request Error'))
     })
   })
 }

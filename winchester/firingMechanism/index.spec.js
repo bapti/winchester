@@ -10,6 +10,111 @@ chai.use(sinonChai)
 const should = chai.should
 
 describe('firingMechanism', () => {
+  describe('singleShot', () => {
+    describe('happy path: test autocannon called correctly', () => {
+      var sut
+      var target
+      var autocannon
+
+      before(() => {
+        mockery.enable({useCleanCache: true, warnOnUnregistered: false})
+
+        target = {
+          url: 'http://localhost:3000',
+          connections: 10,
+          pipelining: 1,
+          duration: 10,
+          method: 'GET',
+          headers: [],
+          body: undefined,
+          body_file: undefined,
+          title: 'default_target'
+        }
+      })
+
+      beforeEach(() => {
+        autocannon = sinon.spy(() => new EventEmitter())
+        mockery.registerMock('autocannon', autocannon)
+
+        sut = require('.')
+        sut.singleShot(target)
+      })
+
+      it('should call autocannon', () => {
+        autocannon.called.should.be.equal(true)
+      })
+
+      it('should call autocannon with target', () => {
+        autocannon.calledWith(target).should.be.equal(true)
+      })
+
+      afterEach(() => {
+        mockery.deregisterAll()
+        mockery.resetCache()
+      })
+
+      after(() => {
+        mockery.disable()
+      })
+    })
+
+    describe('happy path: test results returned correctly', () => {
+      var sut
+      var target
+      var result
+
+      before(() => {
+        sut = require('.')
+
+        target = {
+          url: 'http://localhost:3000',
+          connections: 10,
+          pipelining: 1,
+          duration: 1,
+          method: 'GET',
+          headers: [],
+          body: undefined,
+          body_file: undefined,
+          title: 'default_target'
+        }
+
+        result = sut.singleShot(target)
+      })
+
+      it('should eventually return an object', () => {
+        return result.should.eventually.be.an('object')
+      })
+    })
+
+    describe('unhappy path: invalid url should cause a request error to be returned', () => {
+      var sut
+      var target
+      var result
+
+      before(() => {
+        sut = require('.')
+
+        target = {
+          url: 'http://localhost:2999',
+          connections: 10,
+          pipelining: 1,
+          duration: 1,
+          method: 'GET',
+          headers: [],
+          body: undefined,
+          body_file: undefined,
+          title: 'default_target'
+        }
+
+        result = sut.singleShot(target)
+      })
+
+      it('should eventually reject with Request Error', () => {
+        result.should.be.rejectedWith('Error: Request Error')
+      })
+    })
+  })
+
   describe('semiAutomatic', () => {
     describe('happy path: test autocannon called correctly', () => {
       var sut
@@ -114,7 +219,7 @@ describe('firingMechanism', () => {
             url: 'http://localhost:3000',
             connections: 10,
             pipelining: 1,
-            duration: 10,
+            duration: 1,
             method: 'GET',
             headers: [],
             body: undefined,
@@ -132,6 +237,10 @@ describe('firingMechanism', () => {
 
       it('should return an array with one result promise for each target', () => {
         return results.length.should.be.equal(1)
+      })
+
+      it('should return an array with promises able to be resolved to result objects', () => {
+        return results[0].should.eventually.be.an('object')
       })
     })
   })
