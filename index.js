@@ -1,6 +1,6 @@
 const program = require('commander')
 const version = require('./package.json').version
-const winchester = require('./winchester')
+const winchester = require('./lib')
 
 program
   .version(version)
@@ -9,7 +9,7 @@ program
   .command('fire [targetingInfo]')
   .description('Fire Winchester with the specified targeting information')
   .action((targetingInfo) => {
-    const results = winchester.readyAimFire(targetingInfo)
+    const resultPromises = winchester.readyAimFire(__dirname, targetingInfo)
 
     Promise
     .all(resultPromises)
