@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint src && node test/server/setUp &",
-    "test": "nyc mocha --recursive -R spec 'winchester/*.spec.js' 'winchester/**/*.spec.js'",
+    "test": "nyc mocha --recursive -R spec 'lib/*.spec.js' 'lib/**/*.spec.js'",
     "posttest": "nyc report && node test/server/tearDown"
   },
   "repository": {
