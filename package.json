@@ -43,13 +43,13 @@
     "cache": true,
     "all": true,
     "include": [
-      "winchester/*.js",
-      "winchester/**/*.js"
+      "lib/*.js",
+      "lib/**/*.js"
     ],
     "exclude": [
-      "winchester/index.js",
-      "winchester/*.spec.js",
-      "winchester/**/*.spec.js"
+      "lib/index.js",
+      "lib/*.spec.js",
+      "lib/**/*.spec.js"
     ],
     "reporter": [
       "lcov",
