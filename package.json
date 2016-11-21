@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint src && node test/server/setUp &",
-    "test": "nyc mocha --recursive -R spec 'lib/*.spec.js' 'lib/**/*.spec.js'",
+    "test": "nyc mocha --recursive -R spec 'lib/**/*.spec.js'",
     "posttest": "nyc report && node test/server/tearDown"
   },
   "repository": {
@@ -24,6 +24,7 @@
     "js-yaml": "^3.7.0"
   },
   "devDependencies": {
+    "babel-register": "^6.18.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "eslint": "^3.10.0",

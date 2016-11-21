@@ -16,6 +16,7 @@ Targeting files should be stored using yaml in the following format. Each file m
       headers:      OBJECT  // optional, default: undefined
       body:         STRING  // optional, default: undefined
       body_file:    STRING  // optional, default: undefined
+      repeat:       NUM     // optional, default: 1
 ```
 
 ## Targeting File Fields
