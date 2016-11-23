@@ -9,17 +9,8 @@ program
   .command('fire [targetingInfo]')
   .description('Fire Winchester with the specified targeting information')
   .action((targetingInfo) => {
-    const resultPromiseArrays = winchester.readyAimFire(__dirname, targetingInfo)
-
-    for(var i = 0; i < resultPromiseArrays.length; i++) {
-      Promise
-      .all(resultPromiseArrays[i])
-      .then((results) => {
-        console.log(results)
-      }, (error) => {
-        console.error(error)
-      })
-    }
+    const targets = winchester.aim(__dirname, targetingInfo)
+    winchester.fire(targets)
   })
 
 program
