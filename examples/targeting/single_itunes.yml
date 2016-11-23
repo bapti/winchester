@@ -2,4 +2,3 @@ itunes:
   those_dancing_days:
     url: https://itunes.apple.com/search?term=those+dancing+days&country=gb&media=music&entity=album
     pipelining: 5
-    repeat: 3

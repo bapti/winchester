@@ -6,11 +6,11 @@ program
   .version(version)
 
 program
-  .command('fire [targetingInfo]')
-  .description('Fire Winchester with the specified targeting information')
-  .action((targetingInfo) => {
+  .command('fire [timesToFire] [targetingInfo]')
+  .description('Fire Winchester the specified number of times using the specified targeting information')
+  .action((timesToFire, targetingInfo) => {
     const targets = winchester.aim(__dirname, targetingInfo)
-    winchester.fire(targets)
+    winchester.fire(timesToFire, targets)
   })
 
 program
