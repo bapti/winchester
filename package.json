@@ -22,7 +22,8 @@
     "async": "^2.1.4",
     "autocannon": "^0.15.0",
     "commander": "^2.9.0",
-    "js-yaml": "^3.7.0"
+    "js-yaml": "^3.7.0",
+    "statsd-client": "^0.2.3"
   },
   "devDependencies": {
     "babel-register": "^6.18.0",
