@@ -1,0 +1,10 @@
+<html><head><link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet" /><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><script type="text/javascript">google.charts.load('current',{'packages':['line']});google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Run');data.addColumn('number', 'those_dancing_days');data.addColumn('number', 'arab_strap');
+      data.addRows([[1,29.86,79.45],[2,29.15,77.06],[3,26.36,76.25],[4,22.63,81.94],[5,21.67,83.33],[6,22.14,79.63],[7,20.32,72.63],[8,22.16,75.12],[9,21.28,88.17],[10,19.97,89.64]]);
+      var options = {title:'Mean Latency',subtitle:'(ms)',curveType:'function',legend:{position:'bottom'}};
+      var chart = new google.charts.Line(document.getElementById('chart'));
+      chart.draw(data, options);
+    }
+  </script><title>Mean Latency</title></head><body><h1>Mean Latency</h1><div id="chart" style="width:900px;height:500px"></div></body></html>

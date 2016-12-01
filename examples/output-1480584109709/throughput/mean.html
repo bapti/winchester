@@ -1,0 +1,10 @@
+<html><head><link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet" /><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><script type="text/javascript">google.charts.load('current',{'packages':['line']});google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Run');data.addColumn('number', 'those_dancing_days');data.addColumn('number', 'arab_strap');
+      data.addRows([[1,3139174.4,4447709.87],[2,3270246.4,4604996.27],[3,3601203.2,4668347.74],[4,4154982.4,4218333.87],[5,4325376,4292608],[6,4265797.82,4447709.87],[7,4617309.1,4888985.6],[8,4240179.2,4731699.2],[9,4444532.37,4037017.6],[10,4694760.73,3975850.67]]);
+      var options = {title:'Mean Throughput',subtitle:'(bytes)',curveType:'function',legend:{position:'bottom'}};
+      var chart = new google.charts.Line(document.getElementById('chart'));
+      chart.draw(data, options);
+    }
+  </script><title>Mean Throughput</title></head><body><h1>Mean Throughput</h1><div id="chart" style="width:900px;height:500px"></div></body></html>

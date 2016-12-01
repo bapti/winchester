@@ -1,0 +1,10 @@
+<html><head><link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet" /><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><script type="text/javascript">google.charts.load('current',{'packages':['line']});google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Run');data.addColumn('number', 'those_dancing_days');data.addColumn('number', 'arab_strap');
+      data.addRows([[1,878,1848],[2,1199,8398],[3,1615,1721],[4,636,1942],[5,630,1007],[6,543,1913],[7,591,1756],[8,634,1509],[9,405,2051],[10,459,1491]]);
+      var options = {title:'Maximum Latency',subtitle:'(ms)',curveType:'function',legend:{position:'bottom'}};
+      var chart = new google.charts.Line(document.getElementById('chart'));
+      chart.draw(data, options);
+    }
+  </script><title>Maximum Latency</title></head><body><h1>Maximum Latency</h1><div id="chart" style="width:900px;height:500px"></div></body></html>

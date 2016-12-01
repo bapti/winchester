@@ -1,0 +1,10 @@
+<html><head><link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet" /><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><script type="text/javascript">google.charts.load('current',{'packages':['line']});google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Run');data.addColumn('number', 'those_dancing_days');data.addColumn('number', 'arab_strap');
+      data.addRows([[1,61,134],[2,60,131],[3,54,131],[4,48,136],[5,40,162],[6,42,134],[7,39,127],[8,49,129],[9,42,170],[10,41,173]]);
+      var options = {title:'Latency - 90th Percentile',subtitle:'(ms)',curveType:'function',legend:{position:'bottom'}};
+      var chart = new google.charts.Line(document.getElementById('chart'));
+      chart.draw(data, options);
+    }
+  </script><title>Latency 90th Percentile</title></head><body><h1>Latency 90th Percentile</h1><div id="chart" style="width:900px;height:500px"></div></body></html>
