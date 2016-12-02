@@ -18,7 +18,7 @@ Usage
 npm i -g Winchester
 
 // To Fire 3 Times at the Targets in the Specified File
-winchester 3 path/to/target/file.yml
+winchester fire 3 path/to/target/file.yml
 ```
 
 Targeting File Format
