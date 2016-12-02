@@ -13,8 +13,8 @@ program
   .command('fire [timesToFire] [targetingInfo]')
   .description('Fire Winchester the specified number of times using the specified targeting information')
   .action((timesToFire, targetingInfo) => {
-    const { targets, output } = winchester.aim(__dirname, targetingInfo)
-    winchester.fire(timesToFire, targets, output, __dirname)
+    const { targets, output } = winchester.aim(targetingInfo)
+    winchester.fire(timesToFire, targets, output, targetingInfo)
   })
 
 program
