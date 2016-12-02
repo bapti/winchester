@@ -6,10 +6,10 @@ It allows multiple targets to be specified using YAML and then soak tested in pa
 Contents
 --------
 1. Usage
-* Targeting File Format
-* Example Targeting File
-* Coming Soon
-* Under Consideration
+2. Targeting File Format
+3. Example Targeting File
+4. Coming Soon
+5. Under Consideration
 
 Usage
 -----
@@ -44,9 +44,10 @@ output:
 ```
 
 __Notes:__
+
 1. URL must be specified for each target
-* Body is not transformed in any fashion so should be specified in the correct format for the endpoint under test
-* If `body` and `body_file` are specified then the contents of the file will be used in place of the string specified as the body
+2. Body is not transformed in any fashion so should be specified in the correct format for the endpoint under test
+3. If `body` and `body_file` are specified then the contents of the file will be used in place of the string specified as the body
 
 Example Targeting File
 ----------------------
