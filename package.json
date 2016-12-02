@@ -1,8 +1,11 @@
 {
   "name": "winchester",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Soak Testing Tool",
   "main": "index.js",
+  "bin": {
+    "winchester": "index.js"
+  },
   "scripts": {
     "pretest": "eslint src && node test/server/setUp &",
     "test": "nyc mocha --recursive -R spec 'lib/**/*.spec.js'",
