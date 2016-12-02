@@ -1,0 +1,7 @@
+examples/
+output*/
+
+.eslintignore
+.eslintrc.yml
+.gitignore
+.npmignore
