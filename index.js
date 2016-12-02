@@ -1,3 +1,7 @@
+#! /usr/bin/env node
+
+'use strict'
+
 const program = require('commander')
 const version = require('./package.json').version
 const winchester = require('./lib')
