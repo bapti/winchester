@@ -1,6 +1,6 @@
 {
   "name": "winchester",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Configurable Soak Testing Tool",
   "main": "index.js",
   "bin": {

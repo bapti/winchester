@@ -15,7 +15,7 @@ Usage
 -----
 ```
 // To Install
-npm i -g Winchester
+npm i -g winchester
 
 // To Fire 3 Times at the Targets in the Specified File
 winchester fire 3 /absolute/path/to/target/file.yml
