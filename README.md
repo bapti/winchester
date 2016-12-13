@@ -34,6 +34,7 @@ title_of_target_list:
     headers:        OBJECT  // Optional, default: {}
     body:           STRING  // Optional, default: undefined
     body_file:      STRING  // Optional, default: undefined
+    id_replacement: BOOLEAN // Optional, default: false
     title:          STRING  // Optional, default: undefined
 output:
   local:            BOOLEAN // Optional, default: true
@@ -46,7 +47,8 @@ output:
 __Notes:__
 
 1. URL must be specified for each target
-2. Body is not transformed in any fashion so should be specified in the correct format for the endpoint under test
+2. If `id_replacement` is set to true `[<id>]` tags within the body will be replaced with a randomly generated ID
+2. Body is not transformed in any other fashion so should be specified in the correct format for the endpoint under test
 3. If `body` and `body_file` are specified then the contents of the file will be used in place of the string specified as the body
 
 Example Targeting File
@@ -73,6 +75,13 @@ test_targeting_config:
     headers:
       accept: application/json
     body_file: /absolute/path/to/body/file.txt
+  id_replacement_target:
+    url: http://localhost:3003
+    method: POST
+    headers:
+      content-type: application/json
+    body: { email_address: 'test-[<id>]@test.com' }
+    id_replacement: true
 output:
   local: true
   statsd:
@@ -83,8 +92,7 @@ output:
 
 Coming Soon
 -----------
-- Configure body contents to work with dynamic ranges to allow testing of POST endpoints where created resources contain one or more unique identifiers specified in the request body
-- Configure how many soak tests to run in parallel
+- Configure how many instances of AutoCannon will be fired in parallel
 - Ability to switch statsd output off
 - Improved local output
 
