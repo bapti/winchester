@@ -3,6 +3,8 @@ Winchester is a configurable soak testing tool based on the excellent [AutoCanno
 
 It allows multiple targets to be specified using YAML and then soak tested in parallel the specified number of times. Output is provided locally in the form of simple HTML files which utilise Google Charts. Output is also automatically sent to a statsd server which can be configured in the same YAML file as the targets.
 
+Node v7 is required to run Winchester at present.
+
 Contents
 --------
 1. Usage
