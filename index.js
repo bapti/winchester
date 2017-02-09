@@ -10,11 +10,11 @@ program
   .version(version)
 
 program
-  .command('fire [timesToFire] [targetingInfo]')
-  .description('Fire Winchester the specified number of times using the specified targeting information')
-  .action((timesToFire, targetingInfo) => {
-    const { targets, output } = winchester.aim(targetingInfo)
-    winchester.fire(timesToFire, targets, output, targetingInfo)
+  .command('fire [repeat] [configPath]')
+  .description('Run Winchester the specified number of times using the config file specified')
+  .action((repeat, configPath) => {
+    const { targets, output } = winchester.aim(configPath, repeat)
+    winchester.fire(targets, output, configPath)
   })
 
 program
