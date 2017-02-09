@@ -7,9 +7,7 @@
     "winchester": "index.js"
   },
   "scripts": {
-    "pretest": "eslint src && node test/server/setUp &",
-    "test": "nyc mocha --recursive -R spec 'lib/**/*.spec.js'",
-    "posttest": "nyc report && node test/server/tearDown"
+    "test": "echo Not Implemented"
   },
   "repository": {
     "type": "git",
@@ -28,40 +26,5 @@
     "js-yaml": "^3.7.0",
     "lodash": "^4.17.2",
     "statsd-client": "^0.2.3"
-  },
-  "devDependencies": {
-    "babel-register": "^6.18.0",
-    "chai": "^3.5.0",
-    "chai-as-promised": "^6.0.0",
-    "eslint": "^3.10.0",
-    "express": "^4.14.0",
-    "mocha": "^3.1.2",
-    "mockery": "^2.0.0",
-    "nyc": "^8.4.0",
-    "sinon": "^1.17.6",
-    "sinon-chai": "^2.8.0"
-  },
-  "nyc": {
-    "check-coverage": false,
-    "lines": 99,
-    "statements": 99,
-    "functions": 99,
-    "branches": 99,
-    "cache": true,
-    "all": true,
-    "include": [
-      "lib/*.js",
-      "lib/**/*.js"
-    ],
-    "exclude": [
-      "lib/index.js",
-      "lib/**/*.min.js",
-      "lib/*.spec.js",
-      "lib/**/*.spec.js"
-    ],
-    "reporter": [
-      "lcov",
-      "text-summary"
-    ]
   }
 }
