@@ -25,6 +25,7 @@
     "commander": "^2.9.0",
     "js-yaml": "^3.7.0",
     "lodash": "^4.17.2",
+    "pug": "^2.0.0-beta11",
     "statsd-client": "^0.2.3"
   },
   "devDependencies": {

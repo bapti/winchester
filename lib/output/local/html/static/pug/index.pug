@@ -1,0 +1,72 @@
+extends layout.pug
+
+block head
+  style(type='text/css')= style
+
+block content
+  table(class='table-light')
+    thead(class='bg-darken-1')
+      tr
+        th Errors
+        th Latency
+        th Response Time
+        th Throughput
+        th Timeouts
+    tbody
+      tr
+        td
+          a(href='./errors/count.html') Count
+        td
+          a(href='./latency/mean.html') Mean
+        td
+          a(href='./responseTime/mean.html') Mean
+        td
+          a(href='./throughput/mean.html') Mean
+        td
+          a(href='./timeouts/count.html') Count
+      tr
+        td
+        td
+          a(href='./latency/min.html') Minimum
+        td
+          a(href='./responseTime/min.html') Minimum
+        td
+          a(href='./throughput/min.html') Minimum
+        td
+      tr
+        td
+        td
+          a(href='./latency/max.html') Maximum
+        td
+          a(href='./responseTime/max.html') Maximum
+        td
+          a(href='./throughput/max.html') Maximum
+        td
+      tr
+        td
+        td
+          a(href='./latency/p50.html') 50th Percentile
+        td
+        td
+        td
+      tr
+        td
+        td
+          a(href='./latency/p75.html') 75th Percentile
+        td
+        td
+        td
+      tr
+        td
+        td
+          a(href='./latency/p90.html') 90th Percentile
+        td
+        td
+        td
+      tr
+        td
+        td
+          a(href='./latency/p99.html') 99th Percentile
+        td
+        td
+        td
