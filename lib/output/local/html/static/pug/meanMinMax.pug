@@ -1,0 +1,15 @@
+extends layout.pug
+
+block head
+  style(type='text/css')= style
+  script(charset='utf-8' type='text/javascript')= script
+
+block content
+  div(id='min')
+  script(charset='utf-8' type='text/javascript')= min
+
+  div(id='mean')
+  script(charset='utf-8' type='text/javascript')= mean
+
+  div(id='max')
+  script(charset='utf-8' type='text/javascript')= max

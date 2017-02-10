@@ -1,0 +1,27 @@
+extends layout.pug
+
+block head
+  style(type='text/css')= style
+  script(charset='utf-8' type='text/javascript')= script
+
+block content
+  div(id='min')
+  script(charset='utf-8' type='text/javascript')= minScript
+
+  div(id='mean')
+  script(charset='utf-8' type='text/javascript')= meanScript
+
+  div(id='max')
+  script(charset='utf-8' type='text/javascript')= maxScript
+
+  div(id='p50')
+  script(charset='utf-8' type='text/javascript')= p50Script
+
+  div(id='p75')
+  script(charset='utf-8' type='text/javascript')= p75Script
+
+  div(id='p90')
+  script(charset='utf-8' type='text/javascript')= p90Script
+
+  div(id='p99')
+  script(charset='utf-8' type='text/javascript')= p99Script
