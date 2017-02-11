@@ -2,6 +2,8 @@
 
 'use strict'
 
+const autocannon = require('autocannon')
+
 const program = require('commander')
 const version = require('./package.json').version
 
