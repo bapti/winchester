@@ -1,7 +1,8 @@
 extends layout.pug
 
 block head
-  style(type='text/css')= style
+  style(type='text/css')
+    include ../css/basscss.min.css
 
 block content
   table(class='table-light')
@@ -15,12 +16,12 @@ block content
     tbody
       tr
         td
-          a(href='./errors/index.html') Count
+          a(href='./errors.html') Count
         td
-          a(href='./latency/index.html') Mean, Min, Max &amp; Percentiles
+          a(href='./latency.html') Mean, Min, Max &amp; Percentiles
         td
-          a(href='./requests/index.html') Mean, Min &amp; Max
+          a(href='./requests.html') Mean, Min &amp; Max
         td
-          a(href='./throughput/index.html') Mean, Min &amp; Max
+          a(href='./throughput.html') Mean, Min &amp; Max
         td
-          a(href='./timeouts/index.html') Count
+          a(href='./timeouts.html') Count
