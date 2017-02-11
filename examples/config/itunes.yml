@@ -9,8 +9,10 @@ targets:
     pipelining: 10
     duration: 30
 output:
-  local: true
-  statsd:
-    host: statsd.host
-    port: 8125
-    globalPrefix: itunes.api
+  local:
+    errors: true
+    latency: true
+    requests: true
+    throughput: true
+    timeouts: true
+    outputPath: /Users/donald/JavaScript/winchester/examples/output/
