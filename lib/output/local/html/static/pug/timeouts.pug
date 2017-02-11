@@ -1,0 +1,14 @@
+extends layout.pug
+
+block head
+  style(type='text/css')
+    include ../css/basscss.min.css
+    include ../css/chartist.min.css
+  script(charset='utf-8' type='text/javascript')
+    include ../js/chartist.min.js
+    include ../js/plugins/chartist-plugin-axistitle.min.js
+    include ../js/plugins/chartist-plugin-pointlabels.min.js
+
+block content
+  div(id='count')
+  script(charset='utf-8' src='./timeouts/count.js' type='text/javascript')
