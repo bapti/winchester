@@ -15,7 +15,7 @@ program
   .description('Run Winchester the specified number of times using the config file specified')
   .action((repeat, configPath) => {
     const { title, targets, output } = load(configPath, repeat)
-    run(title, targets, output)
+    run(title, targets, repeat, output)
   })
 
 program
