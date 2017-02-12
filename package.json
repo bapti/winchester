@@ -1,13 +1,13 @@
 {
   "name": "winchester",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Configurable Soak Testing Tool",
   "main": "index.js",
   "bin": {
     "winchester": "index.js"
   },
   "scripts": {
-    "test": "echo Not Implemented"
+    "test": "tap 'lib/**/*.spec.js'"
   },
   "repository": {
     "type": "git",
