@@ -17,3 +17,7 @@ output:
     throughput: true
     timeouts: true
     outputPath: /Users/donald/JavaScript/winchester/examples/output
+  statsD:
+    host: http://localhost/statsd
+    port: 8125
+    prefix: itunes.api
