@@ -1,5 +1,0 @@
-test_targeting_config:
-  missing_url_target:
-    connections: 100
-  second_missing_url_target:
-    connections: 100

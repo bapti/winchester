@@ -1,0 +1,27 @@
+extends layout.pug
+
+block head
+  style(type='text/css')
+    include ../css/basscss.min.css
+
+block content
+  table(class='table-light')
+    thead(class='bg-darken-1')
+      tr
+        th Errors
+        th Latency (ms)
+        th Requests / Second
+        th Throughput (Bytes / Second)
+        th Timeouts
+    tbody
+      tr
+        td
+          a(href='./errors.html') Count
+        td
+          a(href='./latency.html') Mean, Min, Max &amp; Percentiles
+        td
+          a(href='./requests.html') Mean, Min &amp; Max
+        td
+          a(href='./throughput.html') Mean, Min &amp; Max
+        td
+          a(href='./timeouts.html') Count
