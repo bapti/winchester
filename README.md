@@ -1,6 +1,7 @@
 # Winchester
 
 [![Build Status](https://travis-ci.org/darArch/winchester.svg?branch=master)](https://travis-ci.org/darArch/winchester)
+[![Coveralls](https://img.shields.io/coveralls/darArch/winchester.svg?style=flat-square)](https://www.npmjs.com/package/winchester)
 [![npm](https://img.shields.io/npm/v/winchester.svg)](https://www.npmjs.com/package/winchester)
 [![npm](https://img.shields.io/npm/dt/winchester.svg)](https://www.npmjs.com/package/winchester)
 
