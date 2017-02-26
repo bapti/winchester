@@ -5,7 +5,9 @@
 const program = require('commander')
 const version = require('./package.json').version
 
-const { load, run } = require('./lib')
+const lib = require('./lib')
+const load = lib.load
+const run = lib.run
 
 program
   .version(version)
