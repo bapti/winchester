@@ -16,7 +16,11 @@ program
   .command('fire [repeat] [configPath]')
   .description('Run Winchester the specified number of times using the config file specified')
   .action((repeat, configPath) => {
-    const { title, targets, output } = load(configPath, repeat)
+    const config = load(configPath, repeat)
+    const title = config.title
+    const targets = config.targets
+    const output = config.output
+    
     run(title, targets, repeat, output)
   })
 
