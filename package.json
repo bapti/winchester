@@ -7,7 +7,8 @@
     "winchester": "index.js"
   },
   "scripts": {
-    "test": "tap 'lib/**/*.spec.js'"
+    "test": "nyc tap 'lib/**/*.spec.js'",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,57 @@
     "pug": "^2.0.0-beta11"
   },
   "devDependencies": {
+    "coveralls": "^2.11.16",
+    "nyc": "^10.1.2",
     "tap": "^10.1.0"
+  },
+  "nyc": {
+    "lines": [
+      80,
+      95
+    ],
+    "statements": [
+      80,
+      95
+    ],
+    "functions": [
+      80,
+      95
+    ],
+    "branches": [
+      80,
+      95
+    ],
+    "exclude": [
+      "**/*.css",
+      "**/*.min.js",
+      "**/*.spec.js",
+      "**/*.pug",
+      "**/*.yml",
+      "**/*.html",
+      "**/*.yaml",
+      "coverage/**/*",
+      "examples/**/*.js",
+      "index.js",
+      "lib/index.js",
+      "lib/config/index.js",
+      "lib/config/default/index.js",
+      "lib/config/reader/index.js",
+      "lib/config/validator/index.js",
+      "lib/output/index.js",
+      "lib/output/local/html/index.js",
+      "lib/output/local/html/pageBuilder/index.js",
+      "lib/output/local/html/scriptGenerator/index.js",
+      "lib/output/local/html/writer/index.js",
+      "lib/output/remote/index.js",
+      "lib/output/remote/statsD/index.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": true,
+    "all": true,
+    "check-coverage": true
   }
 }
