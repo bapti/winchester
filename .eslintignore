@@ -1,0 +1,10 @@
+**/*.css
+**/*.min.js
+**/*.spec.js
+**/*.pug
+**/*.yml
+**/*.html
+**/*.yaml
+
+coverage/
+examples/**/*.js
