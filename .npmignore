@@ -6,3 +6,5 @@ examples/
 .gitignore
 .npmignore
 .travis.yml
+
+**/*.spec.js
