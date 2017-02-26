@@ -1,4 +1,8 @@
 # Winchester
+
+[![npm](https://img.shields.io/npm/v/winchester.svg)](https://www.npmjs.com/package/winchester)
+[![npm](https://img.shields.io/npm/dt/winchester.svg)](https://www.npmjs.com/package/winchester)
+
 Winchester is a configuration layer for the excellent [AutoCannon](https://github.com/mcollina/autocannon) soak testing tool.
 
 It allows multiple targets to be specified using YAML in order to enable soak testing to be automated and repeated without manually scripting AutoCannon.
