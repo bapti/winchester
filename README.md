@@ -13,7 +13,7 @@ Output is provided locally in the form of HTML files which make use of [Chartist
 
 Alternatively, output can be sent to a StatsD server using [hot-shots](https://github.com/brightcove/hot-shots), currently only vanilla StatsD is supported. Support for the alternative protocols which hot-shots supports may be added if there is demand.
 
-Currently Node v7 or greater is required to run Winchester.
+Currently Node v4 or greater is required to run Winchester (tested with 4.8.0, 5.12.0, 6.10.0 & 7.6.0).
 
 Contents
 --------
@@ -104,5 +104,4 @@ Coming Soon
 
 Under Consideration
 -------------------
-- Support for earlier versions of NodeJs.
 - Support for alternative StatsD implementations supported by hot-shots.
