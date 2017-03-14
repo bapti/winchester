@@ -17,6 +17,14 @@
   },
   "author": "Donald Robertson <donaldarobertson89@gmail.com",
   "license": "MIT",
+  "keywords": [
+    "http",
+    "soak",
+    "load",
+    "fast",
+    "autocannon",
+    "test"
+  ],
   "bugs": {
     "url": "https://github.com/darArch/winchester/issues"
   },
